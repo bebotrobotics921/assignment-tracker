@@ -1,11 +1,16 @@
 import { Header } from "./components/Header";
 import { Assignments } from "./components/Assignments";
+import { useState } from 'react';
 
 function App() {
+ const [ assignList, setAssignList ] = useState('');
+ 
   return (
     <>
-      <Header />
-      <Assignments />
+      <Header assignList={assignList}/>
+      <Assignments assignList={assignList} {...setAssignList} 
+                />
+      
     </>
   );
 }

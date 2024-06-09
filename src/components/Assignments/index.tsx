@@ -1,7 +1,9 @@
 import { Assignment } from "../Assignment";
 import styles from "./assignments.module.css";
 
-export function Assignments() {
+export function Assignments( {assignList}: {assignList:any}, {setAssignList}:{setAssignList:any}) {
+
+  
   return (
     <section className={styles.assignments}>
       <header className={styles.header}>
@@ -17,7 +19,10 @@ export function Assignments() {
       </header>
 
       <div className={styles.list}>
-        <Assignment />
+            <Assignment assignList={assignList} {...setAssignList}
+                        />
+       
+        
       </div>
     </section>
   );
