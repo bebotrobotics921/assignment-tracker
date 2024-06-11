@@ -1,14 +1,16 @@
 import styles from "./assignment.module.css";
 import { TbTrash } from "react-icons/tb";
 
-
-export function Assignment({}) {
+export function Assignment({assignments}:any) {
   
   return (
     <div className={styles.assignment}>
       <button className={styles.checkContainer}>  
       </button>
-      <p></p>
+     
+      <p>{assignments.title}</p>
+   
+      
       
 
       <button className={styles.deleteButton}>

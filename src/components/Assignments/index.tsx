@@ -1,12 +1,15 @@
 import { Assignment } from "../Assignment";
-
+import { TAssignment } from "../../App";
 import styles from "./assignments.module.css";
 
+type Props ={
+  assignments: TAssignment[] | [];
+}
 
-
-export function Assignments({assignments}: any){
+export function Assignments({assignments}: Props){
   
   return (
+   
     <section className={styles.assignments}>
       <header className={styles.header}>
           <div>
@@ -19,13 +22,12 @@ export function Assignments({assignments}: any){
             <span>1 of 1</span>
           </div>
       </header>
-
-      <div className={styles.list}>
-       <div>
-          
+      
+        <div className={styles.list}>
+        <div>
+              <Assignment assignments={assignments}  />
         </div>
-      </div>
-        
+        </div>
     </section>
   );
 }
