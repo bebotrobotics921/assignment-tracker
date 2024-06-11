@@ -1,29 +1,32 @@
 import { Assignment } from "../Assignment";
+
 import styles from "./assignments.module.css";
 
-export function Assignments( {assignList}: {assignList:any}, {setAssignList}:{setAssignList:any}) {
 
+
+export function Assignments({assignments}: any){
   
   return (
     <section className={styles.assignments}>
       <header className={styles.header}>
-        <div>
-          <p>Created Assignments</p>
-          <span>1</span>
-        </div>
+          <div>
+            <p>Created Assignments</p>
+            <span>1</span>
+          </div>
 
-        <div>
-          <p className={styles.textPurple}>Completed Assignments</p>
-          <span>1 of 1</span>
-        </div>
+          <div>
+            <p className={styles.textPurple}>Completed Assignments</p>
+            <span>1 of 1</span>
+          </div>
       </header>
 
       <div className={styles.list}>
-            <Assignment assignList={assignList} {...setAssignList}
-                        />
-       
-        
+       <div>
+          
+        </div>
       </div>
+        
     </section>
   );
 }
+

@@ -2,14 +2,18 @@ import { Header } from "./components/Header";
 import { Assignments } from "./components/Assignments";
 import { useState } from 'react';
 
+export type TAssignment = {
+  title: string;
+  completed: boolean;
+}
+
 function App() {
- const [ assignList, setAssignList ] = useState('');
- 
+  const [assignments, setAssignments] = useState<TAssignment[] | []>([]);
+  
   return (
     <>
-      <Header assignList={assignList}/>
-      <Assignments assignList={assignList} {...setAssignList} 
-                />
+      <Header />
+      <Assignments assignments={assignments}  />
       
     </>
   );
