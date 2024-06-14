@@ -32,7 +32,6 @@ export const Header = ({ setAssignments }: Props) => {
         <input placeholder="Add a new assignment" 
               type="text" 
               value={assignment} 
-              
               onChange={(e) => setAssignment(e.target.value)}/>
 
         <button  disabled={isEmpty}>

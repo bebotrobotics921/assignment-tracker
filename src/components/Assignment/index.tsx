@@ -7,33 +7,22 @@ type Props = {
   assignments: string;
   completed: boolean;
 }
-export function Assignment({ assignments }: Props) {
-  const [assignment, setAssignment] = useState();
+export function Assignment({ id, assignments, completed }: Props) {
+  const [assignment, setAssignment] = useState<string>("");
 
-  const handleCheckContainer = (id: number) => {
-    setAssignment(
-      assignments.map(assignment => {
-        if(assignment.id === id) {
-          return { ...assignment, completed: !assignment.completed};
-        }
-        return assignment;
-      }),
-    );
-  };
+
   
-  const handleDeleteButton = (id: number) => {
-    setAssignment(assignments.filter(assignment => assignment.id !== id));
-  };
+
   
   
   return (
     <div className={styles.assignment}>
-      <button className={styles.checkContainer}  onClick={() => handleCheckContainer(assignment.id)}>  
+      <button className={styles.checkContainer} >  
       </button>
      
-      <p >{assignment}</p>
+      <p style={{ textDecoration: completed ? 'line-through' : 'none' }}>{assignments}</p>
    
-      <button className={styles.deleteButton} onClick={() => handleDeleteButton(assignment.id)}>
+      <button className={styles.deleteButton} >
         <TbTrash size={20} />
       </button>
     </div>
