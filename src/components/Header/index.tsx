@@ -5,6 +5,7 @@ import { TAssignment } from "../../App";
 import { useState } from 'react';
 
 
+
 type Props ={
   setAssignments: React.Dispatch<React.SetStateAction<TAssignment[]>>
 };
@@ -12,6 +13,7 @@ type Props ={
 export const Header = ({ setAssignments }: Props) => {
   const [assignment, setAssignment] = useState<string>("");
   const isEmpty = assignment.length === 0; //derived state
+  
 
   const handleCreateButton = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +35,7 @@ export const Header = ({ setAssignments }: Props) => {
               type="text" 
               value={assignment} 
               onChange={(e) => setAssignment(e.target.value)}/>
-
+              
         <button  disabled={isEmpty}>
           Create <AiOutlinePlusCircle size={20} />
         </button>
