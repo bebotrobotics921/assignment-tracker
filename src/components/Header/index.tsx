@@ -20,7 +20,7 @@ export const Header = ({ setAssignments }: Props) => {
     setAssignments((assignments) => {
       return [ 
         ...assignments, 
-        { id: Date.now(), task: assignment, completed: false }
+        { id: crypto.randomUUID(), task: assignment, completed: false }
       ];
     });
   };

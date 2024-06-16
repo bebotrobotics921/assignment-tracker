@@ -6,10 +6,7 @@ import styles from "./assignments.module.css";
 type Props ={
   assignments: TAssignment[]
 }
-
 export function Assignments({assignments}: Props) {
-  
-  
   
   const completedAssignments = assignments.filter((assignment)=> assignment.completed).length
   const totalAssignments = assignments.length
@@ -30,8 +27,8 @@ export function Assignments({assignments}: Props) {
       
         <div className={styles.list}>
         
-          {assignments.map(assignment => (
-            <Assignment id={assignment.id} assignments={assignment.task} completed={assignment.completed} />
+          {assignments.map((assignment) => (
+            <Assignment id={assignment.id} assignment={assignment.task} completed={assignment.completed} />
           ))}
             
         </div>
