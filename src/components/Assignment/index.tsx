@@ -11,7 +11,7 @@ type Props = {
   completed: boolean;
 }
 
-export function Assignment({ assignment, setAssignments, completed: incomplete }: Props) {
+export function Assignment({ assignment, setAssignments, completed: incomplete  }: Props) {
   
   const [completed, setCompleted] = useState(incomplete);
   const [counter, setCounter] = useState(0);
@@ -24,11 +24,13 @@ export function Assignment({ assignment, setAssignments, completed: incomplete }
   
   const toggleComplete = () => {
     setCompleted(!completed);
-    if (completed === true){
-      setCounter(counter +1);
+    if (completed === false){
+      setCounter(counter+1);
     } else {
-      setCounter(counter -1);
+      return ""
     }
+    
+    console.log(counter)
   };
   
   
@@ -40,7 +42,7 @@ export function Assignment({ assignment, setAssignments, completed: incomplete }
         
       </button>
      
-      <p className={styles.textCompleted} >{assignment}</p>
+      <p className={completed ? styles.textCompleted : ""} >{assignment}</p>
    
       <button className={styles.deleteButton}  >
         <TbTrash size={20} onClick={()=> handleDelete(assignment)}/>
