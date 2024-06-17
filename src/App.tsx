@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Header setAssignments={setAssignments}/>
-      <Assignments assignments={assignments} />
+      <Assignments assignments={assignments} setAssignments={setAssignments}/>
       
     </>
   );

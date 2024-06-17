@@ -22,7 +22,10 @@ export const Header = ({ setAssignments }: Props) => {
         ...assignments, 
         { id: crypto.randomUUID(), task: assignment, completed: false }
       ];
-    });
+      
+    }
+  );
+  setAssignment('');
   };
 
   

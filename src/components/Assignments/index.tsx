@@ -5,24 +5,26 @@ import styles from "./assignments.module.css";
 
 type Props ={
   assignments: TAssignment[]
+  setAssignments: any;
 }
-export function Assignments({assignments}: Props) {
+export function Assignments({assignments, setAssignments}: Props) {
   
   
+ 
   const completedAssignments = assignments.filter((assignment)=> assignment.completed).length
-  const totalAssignments = assignments.length
+  const createdAssignments = assignments.length
 
   return (
     <section className={styles.assignments}>
       <header className={styles.header}>
           <div>
             <p>Created Assignments</p>
-            <span>{totalAssignments}</span>
+            <span>{createdAssignments}</span>
           </div>
 
           <div>
             <p className={styles.textPurple} >Completed Assignments</p>
-            <span>{completedAssignments} of {totalAssignments}</span>
+            <span>{completedAssignments} of {createdAssignments}</span>
           </div>
       </header>
       
@@ -32,6 +34,8 @@ export function Assignments({assignments}: Props) {
             <Assignment id={assignment.id} 
               assignment={assignment.task} 
               completed={assignment.completed}
+              setAssignments={setAssignments}
+              
               />
           ))}
             
