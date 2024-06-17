@@ -16,19 +16,19 @@ export function Assignment({ assignment, completed }: Props) {
     setAssignments((assignments).filter(assignment=> assignment.id !== id));
   }
 
-  const toggleComplete = (id: string) => {
-    console.log(id)
-    setAssignments(assignments.map((assignment)=> 
-      assignment.id === id ? {...assignment, completed: !completed} : assignment
-    )
-    );
+  const toggle =(completed: boolean) =>{
+    console.log("clicked")
+    setAssignments(assignments.map((assignment) =>
+      !completed ? {...assignment, completed: !completed} : assignment));
+    
   }
+  
 
   return (
     <div className={styles.assignment}>
       <button className={styles.checkContainer}  >
         <div >  
-          <IoMdCheckmarkCircle /> 
+          { !completed ? <IoMdCheckmarkCircle onClick={()=> toggle(completed)}/>: <div></div> }
         </div>
       </button>
      
