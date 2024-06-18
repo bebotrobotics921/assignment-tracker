@@ -13,10 +13,14 @@ function App() {
     { id: "1", task: "study typescript", completed: false },
   ]);
   
+  
   return (
     <>
       <Header setAssignments={setAssignments}/>
-      <Assignments assignments={assignments} setAssignments={setAssignments}/>
+      <Assignments assignments={assignments} 
+      setAssignments={setAssignments}
+      
+    />
       
     </>
   );

@@ -6,6 +6,7 @@ import styles from "./assignments.module.css";
 type Props ={
   assignments: TAssignment[]
   setAssignments: any;
+  
 }
 export function Assignments({assignments, setAssignments}: Props) {
   
@@ -14,6 +15,7 @@ export function Assignments({assignments, setAssignments}: Props) {
   const completedAssignments = assignments.filter((assignment)=> assignment.completed).length
   const createdAssignments = assignments.length
 
+  
   return (
     <section className={styles.assignments}>
       <header className={styles.header}>
