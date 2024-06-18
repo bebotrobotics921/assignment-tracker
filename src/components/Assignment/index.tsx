@@ -9,13 +9,15 @@ type Props = {
   assignment: string;
   setAssignments: any;
   completed: boolean;
+  counter: any;
+  setCounter: any;
 }
 
-export function Assignment({ assignment, setAssignments, completed: icomplete }: Props) {
+export function Assignment({ assignment, setAssignments, completed: icomplete, counter, setCounter }: Props) {
   
   
   const [completed, setCompleted] = useState(icomplete);
-  const [counter, setCounter] = useState(0)
+  
   const handleDelete = (task: string) => {
     setAssignments((assignments: any) => {
       return assignments.filter((assignment:any)=> assignment.task !== task);
@@ -25,12 +27,12 @@ export function Assignment({ assignment, setAssignments, completed: icomplete }:
 const toggleComplete = () => {
   setCompleted(!completed);
   if (completed === false){
-    setCounter(counter+1);
+    setCounter(counter + 1);
   } else {
     return ""
   }
   
-  console.log(counter)
+  
 };
   
   

@@ -1,7 +1,7 @@
 import { Assignment } from "../Assignment";
 import { TAssignment } from "../../App";
 import styles from "./assignments.module.css";
-
+import { useState } from 'react';
 
 type Props ={
   assignments: TAssignment[]
@@ -10,9 +10,9 @@ type Props ={
 }
 export function Assignments({assignments, setAssignments}: Props) {
   
-  
+  const [counter, setCounter] = useState(0)
  
-  const completedAssignments = assignments.filter((assignment)=> assignment.completed).length
+  
   const createdAssignments = assignments.length
 
   
@@ -26,7 +26,7 @@ export function Assignments({assignments, setAssignments}: Props) {
 
           <div>
             <p className={styles.textPurple} >Completed Assignments</p>
-            <span>{completedAssignments} of {createdAssignments}</span>
+            <span>{counter} of {createdAssignments}</span>
           </div>
       </header>
       
@@ -37,7 +37,8 @@ export function Assignments({assignments, setAssignments}: Props) {
               assignment={assignment.task} 
               completed={assignment.completed}
               setAssignments={setAssignments}
-              
+              counter={counter}
+              setCounter={setCounter}
               />
           ))}
             
